@@ -1,0 +1,8 @@
+#title = "Mqtt Toml"
+
+[mqtt]
+broker = "tcp://ip.test.cn:1883"
+user = ""
+password = ""
+client_id = "mqtt_client"
+store = ":memory:"

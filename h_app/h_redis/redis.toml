@@ -1,0 +1,6 @@
+#title = "Redis Toml"
+
+[redis]
+host = "192.168.0.1:6379"
+auth = ""
+poolnum = 30

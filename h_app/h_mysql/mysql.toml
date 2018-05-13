@@ -1,0 +1,10 @@
+#title = "Mysql Toml"
+
+[database]
+host = "192.168.0.1"
+port = "3306"
+user = "root"
+password = "root"
+dbname = "test"
+charset = "utf8mb4"
+poolnum = 30
