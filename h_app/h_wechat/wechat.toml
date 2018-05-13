@@ -1,0 +1,12 @@
+#title = "wechat Toml"
+
+[wechat]
+wx_mp_appid = ""
+wx_mp_appsecret = ""
+wx_ori_id = ""
+wx_token = ""
+wx_encoded_aes_key = ""
+
+[http]
+host = ":9224"
+timeout = 30
