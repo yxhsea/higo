@@ -29,9 +29,10 @@ func main() {
 
 			//路由解析
 			router := fasthttprouter.New()
-			router.GET("/test", func(ctx *fasthttp.RequestCtx) {
-				fmt.Println(ctx.ConnID())
-			})
+			router.GET("/test", middleware(func(ctx *fasthttp.RequestCtx) {
+				fmt.Println("hello")
+				return
+			}))
 
 			//服务配置
 			server := &fasthttp.Server{
@@ -85,5 +86,12 @@ func initConfig() {
 	viper.WatchConfig()
 	viper.OnConfigChange(func(e fsnotify.Event) {
 		fmt.Println("Config file changed:", e.Name)
+	})
+}
+
+func middleware(h fasthttp.RequestHandler) fasthttp.RequestHandler {
+	return fasthttp.RequestHandler(func(ctx *fasthttp.RequestCtx) {
+		fmt.Println("middleware")
+		return
 	})
 }
