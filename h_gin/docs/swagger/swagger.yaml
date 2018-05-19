@@ -1,0 +1,107 @@
+basePath: /v1
+host: 127.0.0.1:8080
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a sample server Petstore server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /user:
+    delete:
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - description: UserId
+        in: formData
+        name: user_id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            type: string
+      summary: 删除用户
+    get:
+      parameters:
+      - description: userId
+        in: query
+        name: user_id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":"","msg":"ok"}'
+          schema:
+            type: string
+      summary: 获取用户信息
+    post:
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - description: NickName
+        in: formData
+        name: nick_name
+        required: true
+        type: string
+      - description: Email
+        in: formData
+        name: email
+        required: true
+        type: string
+      - description: Phone
+        in: formData
+        name: phone
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            type: string
+      summary: 新增用户
+    put:
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - description: UserId
+        in: formData
+        name: user_id
+        required: true
+        type: integer
+      - description: NickName
+        in: formData
+        name: nick_name
+        required: true
+        type: string
+      - description: Email
+        in: formData
+        name: email
+        required: true
+        type: string
+      - description: Phone
+        in: formData
+        name: phone
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            type: string
+      summary: 修改用户
+swagger: "2.0"
