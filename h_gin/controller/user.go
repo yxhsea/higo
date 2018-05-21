@@ -7,8 +7,43 @@ import (
 	"io/ioutil"
 )
 
-// @Summary 获取用户信息
+// @Summary 测试专用
+// @tags test
 // @Produce  json
+// @Param Token header string true "Token"
+// @Param test query string true "Test"
+// @Success 200 {string} json "{"code":200,"data":{},"msg":"ok"}"
+// @Router /test [get]
+func GetTest(ctx *gin.Context) {
+	fmt.Println("test", ctx.Query("test"))
+	fmt.Println("token", ctx.Request.Header.Get("Token"))
+
+	ctx.JSON(200, gin.H{
+		"message": "test",
+	})
+}
+
+// @Summary 测试专用
+// @tags test
+// @Accept  application/x-www-form-urlencoded
+// @Produce  json
+// @Param Token header string true "Token"
+// @Param test formData string true "Test"
+// @Success 200 {string} json "{"code":200,"data":{},"msg":"ok"}"
+// @Router /test [post]
+func PostTest(ctx *gin.Context) {
+	fmt.Println(ctx.PostForm("test"))
+	fmt.Println("token", ctx.Request.Header.Get("Token"))
+
+	ctx.JSON(200, gin.H{
+		"message": "test",
+	})
+}
+
+// @Summary 获取用户信息
+// @tags user
+// @Produce  json
+// @Param Token header string true "Token"
 // @Param user_id query int true "userId"
 // @Success 200 {string} json "{"code":200,"data":"","msg":"ok"}"
 // @Router /user [get]
@@ -27,8 +62,10 @@ type User struct {
 }
 
 // @Summary 新增用户
+// @tags user
 // @Accept  application/x-www-form-urlencoded
 // @Produce  json
+// @Param Token header string true "Token"
 // @Param nick_name formData string true "NickName"
 // @Param email formData string true "Email"
 // @Param phone formData int false "Phone"
@@ -56,8 +93,10 @@ func PostUser(ctx *gin.Context) {
 }
 
 // @Summary 修改用户
+// @tags user
 // @Accept  application/x-www-form-urlencoded
 // @Produce  json
+// @Param Token header string true "Token"
 // @Param user_id formData int true "UserId"
 // @Param nick_name formData string true "NickName"
 // @Param email formData string true "Email"
@@ -71,8 +110,10 @@ func PutUser(ctx *gin.Context) {
 }
 
 // @Summary 删除用户
+// @tags user
 // @Accept  application/x-www-form-urlencoded
 // @Produce  json
+// @Param Token header string true "Token"
 // @Param user_id formData int true "UserId"
 // @Success 200 {string} json "{"code":200,"data":{},"msg":"ok"}"
 // @Router /user [delete]

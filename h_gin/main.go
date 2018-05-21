@@ -6,6 +6,7 @@ import (
 	"github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 	"higo/h_gin/controller"
+	"higo/h_gin/middleware/jwt"
 )
 
 // @title Swagger Example API
@@ -29,11 +30,22 @@ func main() {
 	//Api文档
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
-	//测试路由
-	r.GET("/v1/user", controller.GetUser)
-	r.POST("/v1/user", controller.PostUser)
-	r.PUT("/v1/user", controller.PutUser)
-	r.DELETE("/v1/user", controller.DeleteUser)
+	r.GET("/v1/test", controller.GetTest)
+	r.POST("/v1/test", controller.PostTest)
+
+	//登录授权
+	r.POST("/v1/login/auth", controller.LoginAuth)
+	r.POST("/v1/login/check", controller.LoginCheck)
+
+	apiv1 := r.Group("/v1")
+	apiv1.Use(jwt.JWT())
+	{
+		//测试路由
+		apiv1.GET("/user", controller.GetUser)
+		apiv1.POST("/user", controller.PostUser)
+		apiv1.PUT("/user", controller.PutUser)
+		apiv1.DELETE("/user", controller.DeleteUser)
+	}
 
 	r.Run(":8080") // listen and serve on 0.0.0.0:8080
 }

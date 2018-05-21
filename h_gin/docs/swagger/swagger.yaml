@@ -13,11 +13,108 @@ info:
   title: Swagger Example API
   version: "1.0"
 paths:
+  /login/auth:
+    post:
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - description: UserName
+        in: formData
+        name: user_name
+        required: true
+        type: string
+      - description: PassWord
+        in: formData
+        name: pass_word
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            type: string
+      summary: 登录授权
+      tags:
+      - auth
+  /login/check:
+    post:
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - description: Token
+        in: formData
+        name: token
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            type: string
+      summary: 登录授权检查
+      tags:
+      - auth
+  /test:
+    get:
+      parameters:
+      - description: Token
+        in: header
+        name: Token
+        required: true
+        type: string
+      - description: Test
+        in: query
+        name: test
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            type: string
+      summary: 测试专用
+      tags:
+      - test
+    post:
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - description: Token
+        in: header
+        name: Token
+        required: true
+        type: string
+      - description: Test
+        in: formData
+        name: test
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            type: string
+      summary: 测试专用
+      tags:
+      - test
   /user:
     delete:
       consumes:
       - application/x-www-form-urlencoded
       parameters:
+      - description: Token
+        in: header
+        name: Token
+        required: true
+        type: string
       - description: UserId
         in: formData
         name: user_id
@@ -31,8 +128,15 @@ paths:
           schema:
             type: string
       summary: 删除用户
+      tags:
+      - user
     get:
       parameters:
+      - description: Token
+        in: header
+        name: Token
+        required: true
+        type: string
       - description: userId
         in: query
         name: user_id
@@ -46,10 +150,17 @@ paths:
           schema:
             type: string
       summary: 获取用户信息
+      tags:
+      - user
     post:
       consumes:
       - application/x-www-form-urlencoded
       parameters:
+      - description: Token
+        in: header
+        name: Token
+        required: true
+        type: string
       - description: NickName
         in: formData
         name: nick_name
@@ -72,10 +183,17 @@ paths:
           schema:
             type: string
       summary: 新增用户
+      tags:
+      - user
     put:
       consumes:
       - application/x-www-form-urlencoded
       parameters:
+      - description: Token
+        in: header
+        name: Token
+        required: true
+        type: string
       - description: UserId
         in: formData
         name: user_id
@@ -104,4 +222,6 @@ paths:
           schema:
             type: string
       summary: 修改用户
+      tags:
+      - user
 swagger: "2.0"

@@ -18,13 +18,163 @@
     "host": "127.0.0.1:8080",
     "basePath": "/v1",
     "paths": {
+        "/login/auth": {
+            "post": {
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "auth"
+                ],
+                "summary": "登录授权",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "UserName",
+                        "name": "user_name",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "PassWord",
+                        "name": "pass_word",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\":200,\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/login/check": {
+            "post": {
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "auth"
+                ],
+                "summary": "登录授权检查",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Token",
+                        "name": "token",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\":200,\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/test": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "test"
+                ],
+                "summary": "测试专用",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Token",
+                        "name": "Token",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Test",
+                        "name": "test",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\":200,\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "consumes": [
+                    "application/x-www-form-urlencoded"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "test"
+                ],
+                "summary": "测试专用",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Token",
+                        "name": "Token",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Test",
+                        "name": "test",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\":200,\"data\":{},\"msg\":\"ok\"}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "/user": {
             "get": {
                 "produces": [
                     "application/json"
                 ],
+                "tags": [
+                    "user"
+                ],
                 "summary": "获取用户信息",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Token",
+                        "name": "Token",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "integer",
                         "description": "userId",
@@ -49,8 +199,18 @@
                 "produces": [
                     "application/json"
                 ],
+                "tags": [
+                    "user"
+                ],
                 "summary": "修改用户",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Token",
+                        "name": "Token",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "integer",
                         "description": "UserId",
@@ -96,8 +256,18 @@
                 "produces": [
                     "application/json"
                 ],
+                "tags": [
+                    "user"
+                ],
                 "summary": "新增用户",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Token",
+                        "name": "Token",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "string",
                         "description": "NickName",
@@ -135,8 +305,18 @@
                 "produces": [
                     "application/json"
                 ],
+                "tags": [
+                    "user"
+                ],
                 "summary": "删除用户",
                 "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Token",
+                        "name": "Token",
+                        "in": "header",
+                        "required": true
+                    },
                     {
                         "type": "integer",
                         "description": "UserId",
