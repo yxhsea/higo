@@ -31,6 +31,9 @@ func main() {
 	//Api文档
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
+	//WebSocket
+	r.GET("/v1/web/socket", controller.WebSocket)
+
 	//测试专用
 	r.GET("/v1/test/info", controller.GetTest)
 	r.POST("/v1/test/add", controller.PostTest)
