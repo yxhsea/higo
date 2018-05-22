@@ -13,6 +13,118 @@ info:
   title: Swagger Example API
   version: "1.0"
 paths:
+  /admin/check/access:
+    get:
+      parameters:
+      - description: Test
+        in: query
+        name: test
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            type: string
+      summary: 鉴定权限
+      tags:
+      - rbac
+  /admin/permission:
+    get:
+      parameters:
+      - description: Token
+        in: header
+        name: Token
+        required: true
+        type: string
+      - description: Test
+        in: query
+        name: test
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            type: string
+      summary: 获取权限
+      tags:
+      - rbac
+    post:
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - description: Token
+        in: header
+        name: Token
+        required: true
+        type: string
+      - description: Test
+        in: formData
+        name: test
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            type: string
+      summary: 添加权限
+      tags:
+      - rbac
+  /admin/role:
+    get:
+      parameters:
+      - description: Token
+        in: header
+        name: Token
+        required: true
+        type: string
+      - description: Test
+        in: query
+        name: test
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            type: string
+      summary: 获取角色
+      tags:
+      - rbac
+    post:
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - description: Token
+        in: header
+        name: Token
+        required: true
+        type: string
+      - description: Test
+        in: formData
+        name: test
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":200,"data":{},"msg":"ok"}'
+          schema:
+            type: string
+      summary: 添加角色
+      tags:
+      - rbac
   /login/auth:
     post:
       consumes:
@@ -58,8 +170,10 @@ paths:
       summary: 登录授权检查
       tags:
       - auth
-  /test:
-    get:
+  /test/add:
+    post:
+      consumes:
+      - application/x-www-form-urlencoded
       parameters:
       - description: Token
         in: header
@@ -67,7 +181,7 @@ paths:
         required: true
         type: string
       - description: Test
-        in: query
+        in: formData
         name: test
         required: true
         type: string
@@ -81,9 +195,8 @@ paths:
       summary: 测试专用
       tags:
       - test
-    post:
-      consumes:
-      - application/x-www-form-urlencoded
+  /test/info:
+    get:
       parameters:
       - description: Token
         in: header
@@ -91,7 +204,7 @@ paths:
         required: true
         type: string
       - description: Test
-        in: formData
+        in: query
         name: test
         required: true
         type: string

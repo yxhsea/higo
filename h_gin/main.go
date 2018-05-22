@@ -6,6 +6,7 @@ import (
 	"github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 	"higo/h_gin/controller"
+	"higo/h_gin/controller/rbac"
 	"higo/h_gin/middleware/jwt"
 )
 
@@ -30,21 +31,30 @@ func main() {
 	//Api文档
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
-	r.GET("/v1/test", controller.GetTest)
-	r.POST("/v1/test", controller.PostTest)
+	//测试专用
+	r.GET("/v1/test/info", controller.GetTest)
+	r.POST("/v1/test/add", controller.PostTest)
 
 	//登录授权
 	r.POST("/v1/login/auth", controller.LoginAuth)
 	r.POST("/v1/login/check", controller.LoginCheck)
 
-	apiv1 := r.Group("/v1")
-	apiv1.Use(jwt.JWT())
+	//权限控制
+	apiAdminV1 := r.Group("/v1/admin")
+	apiAdminV1.GET("/check/access", rbac.CheckAccess)
+	apiAdminV1.GET("/role", rbac.GetRole)
+	apiAdminV1.POST("/role", rbac.PostRole)
+	apiAdminV1.GET("/permission", rbac.GetPermission)
+	apiAdminV1.POST("/permission", rbac.PostPermission)
+
+	apiUserV1 := r.Group("/v1")
+	apiUserV1.Use(jwt.JWT())
 	{
 		//测试路由
-		apiv1.GET("/user", controller.GetUser)
-		apiv1.POST("/user", controller.PostUser)
-		apiv1.PUT("/user", controller.PutUser)
-		apiv1.DELETE("/user", controller.DeleteUser)
+		apiUserV1.GET("/user", controller.GetUser)
+		apiUserV1.POST("/user", controller.PostUser)
+		apiUserV1.PUT("/user", controller.PutUser)
+		apiUserV1.DELETE("/user", controller.DeleteUser)
 	}
 
 	r.Run(":8080") // listen and serve on 0.0.0.0:8080

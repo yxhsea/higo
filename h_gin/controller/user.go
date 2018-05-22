@@ -13,10 +13,13 @@ import (
 // @Param Token header string true "Token"
 // @Param test query string true "Test"
 // @Success 200 {string} json "{"code":200,"data":{},"msg":"ok"}"
-// @Router /test [get]
+// @Router /test/info [get]
 func GetTest(ctx *gin.Context) {
 	fmt.Println("test", ctx.Query("test"))
 	fmt.Println("token", ctx.Request.Header.Get("Token"))
+
+	urlPath := ctx.Request.URL.Path
+	fmt.Printf("urlPath %v \n", urlPath)
 
 	ctx.JSON(200, gin.H{
 		"message": "test",
@@ -30,10 +33,13 @@ func GetTest(ctx *gin.Context) {
 // @Param Token header string true "Token"
 // @Param test formData string true "Test"
 // @Success 200 {string} json "{"code":200,"data":{},"msg":"ok"}"
-// @Router /test [post]
+// @Router /test/add [post]
 func PostTest(ctx *gin.Context) {
 	fmt.Println(ctx.PostForm("test"))
 	fmt.Println("token", ctx.Request.Header.Get("Token"))
+
+	urlPath := ctx.Request.URL.Path
+	fmt.Printf("urlPath %v \n", urlPath)
 
 	ctx.JSON(200, gin.H{
 		"message": "test",
