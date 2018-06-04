@@ -26,10 +26,17 @@ import (
 // @BasePath /v1
 func main() {
 	r := gin.Default()
+	controller.SetWxRouter()
 	gin.SetMode("debug")
 
 	//Api文档
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+
+	//http://1618512a3z.iask.in:38426/v1/wechat/callback
+	r.GET("/testing/v1/wechat/menu", controller.CreateMenu)
+	//微信服务器回调
+	r.GET("/testing/v1/wechat/callback", controller.WxCallbackHandler)
+	r.POST("/testing/v1/wechat/callback", controller.WxCallbackHandler)
 
 	//WebSocket
 	r.GET("/v1/web/socket", controller.WebSocket)
