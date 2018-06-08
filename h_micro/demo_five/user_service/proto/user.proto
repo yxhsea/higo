@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package go.micro.srv.user;
+
+message UserRequest {
+    string username = 1;
+    string password = 2;
+}
+
+message UserResponse {
+    string id = 1;
+}
+
+service CreateUser {
+    rpc CreateUser(UserRequest) returns (UserResponse) {}
+}

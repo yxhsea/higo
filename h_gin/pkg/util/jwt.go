@@ -19,7 +19,7 @@ func GenerateToken(username, password string) (string, error) {
 	nowTime := time.Now()
 	expireTime := nowTime.Add(3 * time.Minute)
 
-	claims := Claims{
+	claims := &Claims{
 		encodeMD5(username), //加密用户名
 		encodeMD5(password), //加密密码
 		jwt.StandardClaims{

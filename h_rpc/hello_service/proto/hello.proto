@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package go.micro.srv.hello;
+
+message HelloRequest {
+    string msg = 1;
+}
+
+message HelloResponse {
+    string reply = 1;
+}
+
+service Hello {
+    rpc GetOne(HelloRequest) returns (HelloResponse) {}
+}
