@@ -1,31 +1,60 @@
 package main
 
 import (
-	"io/ioutil"
-	"log"
-	"os/exec"
+	"bytes"
+	"crypto/md5"
+	"encoding/json"
+	"fmt"
+	"sort"
+	"strings"
+	"time"
 )
 
 func main() {
-	// 执行系统命令
-	// 第一个参数是命令名称
-	// 后面参数可以有多个，命令参数
-	cmd := exec.Command("cmd", "/C", "dir")
-	// 获取输出对象，可以从该对象中读取输出结果
-	stdout, err := cmd.StdoutPipe()
-	if err != nil {
-		log.Fatal(err)
+	goId := 123456
+	merchantId := 20000332793
+	integral := 10
+	appKey := 20000332793
+	appSecret := "508185bb88893454e8037e9079944a735b6defb1"
+	timestamp := time.Now().Unix()
+	fmt.Println("timestamp : ", timestamp)
+
+	dataMap := map[string]interface{}{
+		"app_key":     appKey,
+		"app_secret":  appSecret,
+		"merchant_id": merchantId,
+		"go_id":       goId,
+		"integral":    integral,
+		"timestamp":   timestamp,
 	}
-	// 保证关闭输出流
-	defer stdout.Close()
-	// 运行命令
-	if err := cmd.Start(); err != nil {
-		log.Fatal(err)
+
+	str, _ := json.Marshal(dataMap)
+	fmt.Println(string(str))
+	fmt.Println(getMapSort(dataMap))
+
+	data := []byte(getMapSort(dataMap))
+	has := md5.Sum(data)
+	md5str1 := fmt.Sprintf("%x", has) //将[]byte转成16进制
+	fmt.Println(md5str1)
+}
+
+func getMapSort(sortMap map[string]interface{}) string {
+	keys := make([]string, len(sortMap))
+	i := 0
+	for k := range sortMap {
+		keys[i] = k
+		i++
 	}
-	// 读取输出结果
-	opBytes, err := ioutil.ReadAll(stdout)
-	if err != nil {
-		log.Fatal(err)
+	sort.Strings(keys)
+	var buf bytes.Buffer
+	for _, k := range keys {
+		if k != "sign" && !strings.HasPrefix(k, "reserved") {
+			buf.WriteString(k)
+			buf.WriteString("=")
+			buf.WriteString(fmt.Sprint(sortMap[k]))
+			buf.WriteString("&")
+		}
 	}
-	log.Println(string(opBytes))
+	bufStr := buf.String()
+	return strings.TrimRight(bufStr, "&")
 }
