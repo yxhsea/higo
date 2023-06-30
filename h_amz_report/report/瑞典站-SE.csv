@@ -1,0 +1,9 @@
+"Inkluderar transaktioner på Amazons marknadsplats, Fraktas från Amazon (FBA) och Amazons webbutik",,,,,,,,,,,,,,,,,,,,,,
+"Alla belopp i kr, om inte annat anges",,,,,,,,,,,,,,,,,,,,,,
+Definitioner:,,,,,,,,,,,,,,,,,,,,,,
+"Inkasserad moms: Inkluderar moms som kasserats in från köpare för produktförsäljning, frakt och presentinslagning.",,,,,,,,,,,,,,,,,,,,,,
+Försäljningsavgifter: Inkluderar rörliga avstängningsavgifter och hänvisningsavgifter.,,,,,,,,,,,,,,,,,,,,,,
+"Övriga transaktionsavgifter: Inkluderar återdebitering av frakt, stoppad frakt, fraktstopp, avgifter per artikel och inkassering av moms.",,,,,,,,,,,,,,,,,,,,,,
+Övrigt: Inkluderar belopp för annat än beställningar. Mer information finns i kolumnerna ”Typ” och ”Beskrivning” för varje beställnings-ID.,,,,,,,,,,,,,,,,,,,,,,
+datum/tid,reglerings-id,typ,beställnings-id,sku,beskrivning,antal,marknadsplats,leverans,stad för beställning,delstat för beställning,postadress för beställning,försäljning av produkter,fraktkrediter,krediter för presentinslagning,kampanjrabatter,Inkasserad moms,Skatt för marknadsplatsförmedlare,försäljningsavgifter,fba-avgifter,övriga transaktionsavgifter,Övrigt,totalt
+2 juni 2023 03:34:09 UTC,19793100482,Serviceavgift,,,Cost of Advertising,,,,,,,0,0,0,0,0,0,0,0,"−14,46",0,"−14,46"

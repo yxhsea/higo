@@ -1,0 +1,9 @@
+"Einschließlich Transaktionen zu Amazon Marketplace, Versand durch Amazon und Amazon Webstore",,,,,,,,,,,,,,,,,,,,,,,,,,
+Alle Beträge in Euro sofern nicht anders gekennzeichnet,,,,,,,,,,,,,,,,,,,,,,,,,,
+Definitionen:,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Eingezogene Umsatzsteuer: Einschließlich von Käufern eingezogene Umsatzsteuer für Produktverkäufe, Versand und Geschenkverpackung.",,,,,,,,,,,,,,,,,,,,,,,,,,
+Verkaufsgebühren: Beinhaltet variable Abschlussgebühren und Werbekostenerstattungen.,,,,,,,,,,,,,,,,,,,,,,,,,,
+Andere Transaktionsgebühren: Einschließlich Ausgleichsbuchungen für Versand und Versandgebühren.,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Andere: Enthält Beträge zu Transaktionen, die nicht auf eine Bestellung bezogen sind. Weitere Details finden Sie zu jeder Bestellung in den Spalten ""Typ"" und ""Beschreibung"".",,,,,,,,,,,,,,,,,,,,,,,,,,
+Datum/Uhrzeit,Abrechnungsnummer,Typ,Bestellnummer,SKU,Beschreibung,Menge,Marketplace,Versand,Ort der Bestellung,Bundesland,Postleitzahl,Steuererhebungsmodell,Umsätze,Produktumsatzsteuer,Gutschrift für Versandkosten,Steuer auf Versandgutschrift,Gutschrift für Geschenkverpackung,Steuer auf Geschenkverpackungsgutschriften,Rabatte aus Werbeaktionen,Steuer auf Aktionsrabatte,Einbehaltene Steuer auf Marketplace,Verkaufsgebühren,Gebühren zu Versand durch Amazon,Andere Transaktionsgebühren,Andere,Gesamt
+29.05.2023 22:36:29 UTC,19961511282,Servicegebühr,48956d2d-d54f-4d32-8e5f-69f7d27644e0,,Coupon-Einlösungsgebühr: Sparen Sie €15 bei FLYBIRD Adjustable Bench,7,Amazon.de,,,,,,0,0,0,0,0,0,0,0,0,0,0,"-3,50",0,"-3,50"

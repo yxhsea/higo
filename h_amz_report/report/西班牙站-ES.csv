@@ -1,0 +1,9 @@
+"Incluye transacciones del Marketplace de Amazon, Logística de Amazon y Amazon Webstore",,,,,,,,,,,,,,,,,,,,,,,,,,
+"Todos los importes en EUR, a menos que se especifique lo contrario",,,,,,,,,,,,,,,,,,,,,,,,,,
+Definiciones:,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Recaudación de impuestos sobre ventas: incluye los impuestos sobre ventas recaudados al comprador respecto al producto, el envío y el envoltorio para regalo.",,,,,,,,,,,,,,,,,,,,,,,,,,
+Tarifas por venta: incluyen tarifas variables por cierre de venta y tarifas por referencia.,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Tarifas de otras transacciones: incluye reintegros de los cargos por envío, retenciones de envío y tarifas de impuestos sobre ventas.",,,,,,,,,,,,,,,,,,,,,,,,,,
+"Otro: incluye importes de transacciones distintas del pedido. Para mas información, consulta las columnas ""Tipo"" y ""Descripción"" de cada número de pedido.",,,,,,,,,,,,,,,,,,,,,,,,,,
+fecha y hora,identificador de pago,tipo,número de pedido,sku,descripción,cantidad,web de Amazon,gestión logística,ciudad de procedencia del pedido,comunidad autónoma de procedencia del pedido,código postal de procedencia del pedido,Formulario de recaudación de impuestos,ventas de productos,impuesto de ventas de productos,abonos de envío,impuestos por abonos de envío,abonos de envoltorio para regalo,giftwrap credits tax,devoluciones promocionales,promotional rebates tax,impuesto retenido en el sitio web,tarifas de venta,tarifas de Logística de Amazon,tarifas de otras transacciones,otro,total
+30 may 2023 11:26:31 UTC,19961533552,Pedido,408-1138487-5067530,FBAWB139-EU01,"FLYBIRD Banco ajustable, banco de pesas de utilidad para entrenamiento de cuerpo completo, banco inclinable / declive plegable multiusos (negro)",1,amazon.es,Amazon,Marbella,Malaga,29660,MarketplaceFacilitator,"140,49","29,50",0,0,0,0,0,0,"-29,50","-26,26","-25,57",0,0,"88,66"

@@ -1,0 +1,9 @@
+"Obejmują transakcje Amazon Marketplace, realizowane przez Amazon (FBA) i Amazon Webstore.",,,,,,,,,,,,,,,,,,,,,,
+"Wszystkie kwoty w PLN, chyba że określono inaczej",,,,,,,,,,,,,,,,,,,,,,
+Definicje:,,,,,,,,,,,,,,,,,,,,,,
+"Pobrany podatek od sprzedaży: Obejmuje podatek od sprzedaży pobierany od kupujących za sprzedaż produktów, wysyłkę i pakowanie na prezent.",,,,,,,,,,,,,,,,,,,,,,
+Opłaty za sprzedaż: Obejmują zmienne opłaty za zamknięcie i prowizje od sprzedaży.,,,,,,,,,,,,,,,,,,,,,,
+"Inne opłaty transakcyjne: Obejmują obciążenia zwrotne za wysyłkę, opłaty zatrzymane z tytułu zwrotu kosztów, prowizje za każdy sprzedany produkt i opłaty związane z poborem podatku od sprzedaży.",,,,,,,,,,,,,,,,,,,,,,
+"Pozostałe: Obejmują kwoty transakcji niezwiązanych z zamówieniem. Aby uzyskać więcej informacji, zobacz kolumny „Typ” i „Opis” do każdego identyfikatora zamówienia.",,,,,,,,,,,,,,,,,,,,,,
+data/godzina,identyfikator rozliczenia,typ,identyfikator zamówienia,sku,opis,ilość,rynek,realizacja,miejscowość zamówienia,stan zamówienia,przekaz pocztowy,sprzedaż produktów,noty kredytowe za wysyłkę,środki na pokrycie pakowania na prezent,rabaty promocyjne,pobrany podatek od sprzedaży,Marketplace Facilitator Tax,opłaty za sprzedaż,opłaty za fba,inne opłaty transakcyjne,inne,suma
+2 cze 2023 03:31:23 UTC,19982553022,Opłata za usługę,,,Cost of Advertising,,,,,,,0,0,0,0,0,0,0,0,"-0,32",0,"-0,32"

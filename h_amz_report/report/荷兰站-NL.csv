@@ -1,0 +1,9 @@
+"Omvat transacties van Amazon Marketplace, Fulfillment by Amazon (FBA) en Amazon Webstore",,,,,,,,,,,,,,,,,,,,,,
+"Alle bedragen in EUR, tenzij anders vermeld",,,,,,,,,,,,,,,,,,,,,,
+Definities:,,,,,,,,,,,,,,,,,,,,,,
+"Geïnde omzetbelasting: Inclusief omzetbelasting geïnd door kopers voor de verkoop van producten, verzending en cadeauverpakking.",,,,,,,,,,,,,,,,,,,,,,
+Verkoopkosten: Inclusief variabele afsluitkosten en verwijzingsvergoedingen.,,,,,,,,,,,,,,,,,,,,,,
+"Overige transactiekosten: Inclusief terugvorderingen van verzendkosten, holdbackkosten voor verzending, kosten per item en inningskosten voor omzetbelasting.",,,,,,,,,,,,,,,,,,,,,,
+Overig: Inclusief transactiebedragen die niet aan bestellingen zijn gerelateerd. Raadpleeg voor meer informatie de kolommen 'Type' en 'Beschrijving' van ieder bestelnummer.,,,,,,,,,,,,,,,,,,,,,,
+datum/tijd,schikkings-ID,type,bestelnummer,sku,beschrijving,aantal,marketplace,fulfillment,bestelling stad,status bestelling,bestelling per post,verkoop van producten,Verzendtegoeden,kredietpunten cadeauverpakking,promotiekortingen,geïnde omzetbelasting,Belasting voor marketplace-facilitator,verkoopkosten,fba-vergoedingen,overige transactiekosten,overige,totaal
+31 mei 2023 11:32:37 UTC,19894967952,Bestelling,403-7956831-2840306,SPPTBK-EU01,"Sportsroyals Power Tower-dipstation, optrekstang voor thuisgymnastiek, krachttraining, trainingsapparatuur, 400 lbs/181 kg",1,amazon.nl,Amazon,Bonheiden,Belgium,2820,"165,28","2,47",0,"-24,79","30,02","-30,02","-25,50","-16,37",0,0,"101,09"

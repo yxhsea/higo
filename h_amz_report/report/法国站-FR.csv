@@ -1,0 +1,9 @@
+"Inclut les transactions Amazon Marketplace, Expédié par Amazon et Amazon Webstore",,,,,,,,,,,,,,,,,,,,,,,,,,
+"Tous les montants sont en EUR, sauf mention contraire.",,,,,,,,,,,,,,,,,,,,,,,,,,
+Définitions :,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Taxes collectées sur les ventes : inclut les taxes collectées auprès des acheteurs sur la vente de produits, la livraison et l'emballage.",,,,,,,,,,,,,,,,,,,,,,,,,,
+Frais de vente : Incluent des frais de clôture variable et des frais de référence.,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Autres frais de transaction : incluent les contestations de prélèvement, les retenues sur expédition",,,,,,,,,,,,,,,,,,,,,,,,,,
+"Autre : inclut les montants non-liés aux commandes. Pour de plus amples renseignements, consultez les colonnes ""Type"" et ""Description"" pour chaque commande.",,,,,,,,,,,,,,,,,,,,,,,,,,
+date/heure,numéro de versement,type,numéro de la commande,sku,description,quantité,Marketplace,traitement,ville d'où provient la commande,Région d'où provient la commande,code postal de la commande,Modèle de perception des taxes,ventes de produits,Taxes sur la vente des produits,crédits d'expédition,taxe sur les crédits d’expédition,crédits sur l'emballage cadeau,Taxes sur les crédits cadeaux,Rabais promotionnels,Taxes sur les remises promotionnelles,Taxes retenues sur le site de vente,frais de vente,Frais Expédié par Amazon,autres frais de transaction,autre,total
+30 mai 2023 06:32:23 UTC,19961488242,Commande,406-0549737-2472347,SPPTBK-EU01,"Sportsroyals Power Tower Barre de Traction pour Musculation à Domicile, 200 kg Power Tower Barre de Traction pour Musculation à Domicile, 200 kg",1,amazon.fr,Amazon,Palaiseau,,91120,MarketplaceFacilitator,"183,32","36,67",0,0,0,0,0,0,"-36,67","-33,99","-40,95",0,0,"108,38"
